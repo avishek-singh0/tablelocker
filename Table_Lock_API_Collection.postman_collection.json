@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Table Lock API Collection",
+    "description": "Postman collection for locking, unlocking, and checking table reservation status.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Lock Table",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tableId\": \"table-123\",\n  \"userId\": \"user-abc\",\n  \"duration\": 600\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tables/lock",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tables",
+            "lock"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Unlock Table",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tableId\": \"table-123\",\n  \"userId\": \"user-abc\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tables/unlock",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tables",
+            "unlock"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Table Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tables/table-123/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "tables",
+            "table-123",
+            "status"
+          ]
+        }
+      }
+    }
+  ]
+}
